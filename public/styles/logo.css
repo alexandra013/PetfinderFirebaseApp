@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; 
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: ffffff; 
+    padding: 10px 20px;
+}
+
+.nav__itemSpecialFont {
+    display: flex;
+    align-items: center;
+}
+
+.nav__itemSpecialFont span {
+    font-size: 1.2em; /* Font size for "Petfinder" text */
+    color: #ffffff; /* Dark gray color for text */
+    margin-right: 10px;
+}
+
+.paw {
+    display: inline-block;
+    width: 40px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle;
+}
+
+.nav__link {
+    color: #ffffff; /* Dark gray color for links */
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.2em;
+}
+
+
+.footer__content{
+    display: flex;
+    align-items: center;
+    background-color: ffffff; 
+    padding: 10px 20px;
+}
+
+.footer__logo span{
+
+    font-size: 1.2em; /* Font size for "Petfinder" text */
+    color: #ffffff; /* Dark gray color for text */
+    margin-right: 20px;
+
+}
+.footer__logo {
+display: flex;
+align-items: center;
+}
