@@ -11,17 +11,35 @@
 </head>
 
 <body>
-    <header>
-        <h1>Pet Search</h1>
-        <button class="adopt-button" onclick="adoptPet(1)">Adopt</button>
-
+    <header class="header clearfix">
+        <nav class="header__nav nav">
+            <ul class="nav__wrapper">
+                <li class="nav__itemSpecialFont">
+                    <a class="nav__link" href="#">
+                        <span>Petfinder</span>
+        <img src="images\pawLogo.jpg" alt="Paw" class="paw">
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link1" href="#">
+                        Pet search list:
+                    </a>
+                </li>
+                <li class="nav__item">
+                        <a class="nav__link1" href="index.html">
+                            Home
+                        </a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main id="main-container">
         <!-- Pet cards will be dynamically added here by JavaScript -->
     </main>
+    <script src="scripts/images-names-button.js"></script>
     <script src="scripts/pet-cards.js"></script>
-    <script src="scripts\images-names-button.js"></script>
     <script src="scripts/auth.js"></script>
+   
 </body>
 
 </html>

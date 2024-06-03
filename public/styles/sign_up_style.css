@@ -1,57 +1,196 @@
+/* styles/sign_up_style.css */
+
+/* Apply background image to the body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the sign-up form container */
+form#signup-form {
+    background-color: rgba(255, 255, 255, 0.3); /* More transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: center;
+}
+
+/* Style form elements */
+form#signup-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+.signup__wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin-top: 50px;
 }
-
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
+#h1_id {
+    color: #000000;
+    font-size: 2em;
     margin-bottom: 20px;
-}
-
-form {
     text-align: center;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"] {
+form#signup-form input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
     box-sizing: border-box;
 }
 
-input[type="submit"] {
+form#signup-form button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
-    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    background-color:#0056b3;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-input[type="submit"]:hover {
-    background-color: #0056b3;
+form#signup-form button:hover {
+    background-color:#0056b3;
+}
+
+/* Style for the message box */
+.message-box {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 0, 0, 0.8); /* Red background with some transparency */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.message-box button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+/* ///////////////////////////////////////////////////////////////// navigation bar */
+.header__nav {
+    background-color: #2c0404; /* Background color */
+  }
+  .nav__wrapper {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; /* Align items horizontally with space between */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Add padding */
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  @media (max-width: 768px) {
+    .nav__wrapper {
+        padding: 0;
+        justify-content: center;
+    }
+  }
+  .nav__link,
+.nav__link1 {
+  text-decoration: none; /* Remove underline from links */
+  color: #ffffff; /* Set link color */
+  font-family:'Monaco', sans-serif;
+  font-size: 20px;
+  font-weight: bold; /* Bold text */
+}
+  .nav__link1:hover {
+    color: rgb(210, 49, 25); /* Change text color on hover */
+  }
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: ffffff; 
+    padding: 10px 20px;
+}
+
+.nav__itemSpecialFont {
+    display: flex;
+    align-items: center;
+}
+
+.nav__itemSpecialFont span {
+    font-size: 1.2em; /* Font size for "Petfinder" text */
+    color: #ffffff; /* Dark gray color for text */
+    margin-right: 10px;
+}
+
+.paw {
+    display: inline-block;
+    width: 40px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle;
+}
+
+.nav__link {
+    color: #ffffff; /* Dark gray color for links */
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.2em;
+}
+.signup-button {
+  background-color: #2c0404;
+   border: none;
+   color: white;
+   padding: 7px 7px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 20px;
+   cursor: pointer;
+   border-radius: 4px;
+  font-family:'Monaco', sans-serif;
+  font-weight: bold; /* Bold text */
+  transition: color 0.3s; /* Smooth color transition */
+
+}
+.login-button{
+    background-color: #2c0404;
+    border: none;
+    color: white;
+    padding: 7px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family:'Monaco', sans-serif;
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s; /* Smooth color transition */
+  
+ 
+}
+
+.login-button:hover,
+.signup-button:hover { 
+  color: rgb(210, 49, 25); /* Change text color on hover */
+}
+.login-signup-container {
+  float: right; /* Move the container to the right */
+  
 }

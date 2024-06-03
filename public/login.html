@@ -7,13 +7,117 @@
     <link rel="stylesheet" href="styles/login-style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
+    <header class="header clearfix">
+        <nav class="header__nav nav">
+            <ul class="nav__wrapper">
+                <li class="nav__itemSpecialFont">
+                    <a class="nav__link" href="#">
+                        <span>Petfinder</span>
+        <img src="images\pawLogo.jpg" alt="Paw" class="paw">
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link1" href="index.html">
+                        home
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link1" href="donate.html">
+                        donate
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link1" href="about-us.html">
+                        about us
+                    </a>
+                </li>
+                <li class="nav__item">
+                        <a class="nav__link1" href="search.html">
+                            search
+            
+                        </a>
+                </li>
+                <li class="login-signup-container">
+                <div class="login-signup-buttons">
+                <li button class="login-button">
+                    <a class="login-button" href="login.html">
+                        login
+                    </a>
+                </li>
+                <li><button class="signup-button">
+                    <a class="signup-button" href="signup.html">
+                        sign up
+                    </a>
+                    </button>
+                </li>
+            </div>
+        </li>
+            </ul>
+        </nav>
+    </header>
     <h1>Login Page</h1>
-    <form action="login.php" method="POST">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Login">
+    <div class="form__wrapper">
+    <form id="login-form">
+        <label for="userEmail">Email:</label><br>
+        <input type="email" id="userEmail" name="email"><br>
+        <label for="userPassword">Password:</label><br>
+        <input type="password" id="userPassword" name="password"><br><br>
+        <button type="button" id="login-button">Login</button>
     </form>
+</div>
 </body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    import {
+        getAuth,
+        signInWithEmailAndPassword
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyA2R_sslVzbXHqwbGeYkIPwarqyDmLatR4",
+        authDomain: "petfinder-a877d.firebaseapp.com",
+        databaseURL: "https://petfinder-a877d-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "petfinder-a877d",
+        storageBucket: "petfinder-a877d.appspot.com",
+        messagingSenderId: "15112357500",
+        appId: "1:15112357500:web:cd97d3c5cf2e838761abf9",
+        measurementId: "G-JLL390PYTE"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+
+    // Select DOM elements
+    const userEmail = document.querySelector("#userEmail");
+    const userPassword = document.querySelector("#userPassword");
+    const loginButton = document.querySelector("#login-button");
+
+    // Login function
+    const userLogin = async(event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+        const loginEmail = userEmail.value;
+        const loginPassword = userPassword.value;
+
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+            const user = userCredential.user;
+            console.log(user);
+            localStorage.setItem('userStatusCache', userCredential.user.email);
+            localStorage.setItem('authenticatedCache', 'true');
+            window.location.href = "index-loggedin.html";
+            alert("Login successful!");
+        } catch (error) {
+            console.error(error);
+            alert("Error logging in: " + error.message);
+        }
+    }
+
+    // Attach event listener to login button
+    loginButton.addEventListener("click", userLogin);
+</script>
 </html>

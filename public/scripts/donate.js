@@ -1,11 +1,11 @@
-function adoptPet(petId) {
+  // Function to handle the donate button click
+  function donate() {
     if (isUserAuthenticated()) {
-        // Redirect to the adoption page if the user is authenticated
-      //  window.location.href = `/adopt?petId=${petId}`;
-      showMessage("Thank you for your interest in adopting this pet. You will receive an email with further instructions for completing for adoption process.");
+        // Redirect to the donation page if the user is authenticated
+        window.location.href = '/donate';
     } else {
-        // Show a text box message if the user is not authenticated
-        showMessage("You need to log in to adopt a pet.");
+        // Show a message if the user is not authenticated
+        showMessage('You need to log in to donate.');
     }
 }
 
@@ -26,9 +26,11 @@ function showMessage(message) {
     closeButton.innerText = 'Close';
     closeButton.onclick = function() {
         document.body.removeChild(messageBox);
-        window.location.href = 'login.html';
     };
     
     messageBox.appendChild(closeButton);
     document.body.appendChild(messageBox);
 }
+
+// Add event listener to the donate button
+document.getElementById('donateButton').addEventListener('click', donate);

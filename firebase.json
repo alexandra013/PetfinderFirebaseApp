@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "petfinder-adopt",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,3 +28,175 @@
 
 </body>
 </html>
+
+ -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Petfinder</title>
+    <link rel="stylesheet" href="styles/about-us.css">
+    <style>
+        /* Add styles for code snippet and copy button */
+        .code-container {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .code-snippet {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <li class="nav__item">
+            <a class="nav__link1" href="#">
+                About Petfinder 
+            </a>
+        </li>
+        <li class="nav__item">
+            <a class="nav__link1" href="index.html">
+                Home
+            </a>
+        </li>
+    </header>
+    
+    <main>
+        <section>
+            <h2>What is Petfinder?</h2>
+            <p>Petfinder is an online platform dedicated to helping animals find their forever homes. We provide a centralized database of adoptable pets from shelters and rescue organizations across the country.</p>
+        </section>
+        <section>
+            <h2>Our Mission</h2>
+            <p>Our mission is to connect adoptable pets with loving families and individuals. We believe that every pet deserves a chance to be loved and cared for in a safe and nurturing environment.</p>
+        </section>
+        <section>
+            <h2>Why Choose Petfinder?</h2>
+            <p>Choosing to adopt a pet through Petfinder not only changes the life of the animal you bring home but also enriches your own life. We provide resources and support to help you make the right decision and ensure a smooth transition for both you and your new furry friend.</p>
+        </section>
+        <section>
+            <h2>About the Project</h2>
+            <p>This web project is built using the following technologies:</p>
+            <ul>
+                <li><strong>HTML:</strong> The structure and content of the web pages.</li>
+                <li><strong>CSS:</strong> Styling and layout of the web pages.</li>
+                <li><strong>JavaScript:</strong> Interactive features and dynamic content loading.</li>
+                <li><strong>Firebase:</strong> Backend services such as database and authentication.</li>
+            </ul>
+            <h3>HTML</h3>
+            <p>Details about the HTML structure used in the project.</p>
+            <div class="code-container">
+                <div class="code-snippet" id="html-snippet">
+&lt;header&gt;
+    &lt;h1&gt;About Petfinder&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;What is Petfinder?&lt;/h2&gt;
+        &lt;p&gt;Petfinder is an online platform...&lt;/p&gt;
+    &lt;/section&gt;
+    ...
+&lt;/main&gt;
+                </div>
+                <button class="copy-button" onclick="copyToClipboard('html-snippet')">Copy</button>
+            </div>
+
+            <h3>CSS</h3>
+            <p>Details about the CSS styling used in the project.</p>
+            <div class="code-container">
+                <div class="code-snippet" id="css-snippet">
+header {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+                </div>
+                <button class="copy-button" onclick="copyToClipboard('css-snippet')">Copy</button>
+            </div>
+
+            <h3>JavaScript</h3>
+            <p>Details about the JavaScript functionality used in the project.</p>
+            <div class="code-container">
+                <div class="code-snippet" id="js-snippet">
+// Example JavaScript functionality
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Document is ready');
+});
+                </div>
+                <button class="copy-button" onclick="copyToClipboard('js-snippet')">Copy</button>
+            </div>
+
+            <h3>Firebase</h3>
+            <p>Details about the Firebase services used in the project.</p>
+            <div class="code-container">
+                <div class="code-snippet" id="firebase-snippet">
+// Example Firebase initialization
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+firebase.initializeApp(firebaseConfig);
+                </div>
+                <button class="copy-button" onclick="copyToClipboard('firebase-snippet')">Copy</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Function to copy code to clipboard
+        function copyToClipboard(elementId) {
+            const codeContainer = document.getElementById(elementId);
+            const range = document.createRange();
+            range.selectNodeContents(codeContainer);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+
+            try {
+                document.execCommand('copy');
+                alert('Code copied to clipboard!');
+            } catch (err) {
+                alert('Failed to copy code.');
+            }
+
+            selection.removeAllRanges();
+        }
+    </script>
+</body>
+</html>
+

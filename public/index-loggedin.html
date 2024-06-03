@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Stefan si Alexandra">
-        <title>PetFinder API WebPage</title>
+        <title>PetFinder API WebPage-logged-in</title>
         <link id="style" href="styles\style.css" rel="stylesheet">
         <link id="phone-style" href="styles\logo.css" rel="stylesheet">
         <link href="phone-style.css" rel="stylesheet">
@@ -41,17 +41,33 @@
                     </li>
                     <li class="login-signup-container">
                     <div class="login-signup-buttons">
+                        <li button class="userStatus">
+                            <a class="userStatus" href="#">
+                          status:logged-in
+                            </a>
+                        </li>
+                        <script>
+                            const userStatus = localStorage.getItem('userStatusCache');
+                            document.querySelector('.userStatus').textContent = `email: ${userStatus}`;
+                        </script>
                     <li button class="login-button">
-                        <a class="login-button" href="login.html">
-                            login
+                        <a class="login-button" href="index.html">
+                            log out
                         </a>
                     </li>
-                    <li><button class="signup-button">
-                        <a class="signup-button" href="signup.html">
-                            sign up
-                        </a>
-                        </button>
-                    </li>
+                    <script>
+                        // Add a click event listener to the logout button
+                        document.querySelector('.login-button').addEventListener('click', function(event) {
+                            // Prevent the default behavior of the anchor tag
+                            event.preventDefault();
+                            
+                            // Set the local variable authCache to false
+                            localStorage.setItem('authenticatedCache', 'false');
+                            window.location.href = 'index.html';
+                            // Redirect to index.html or perform any other logout actions
+                            //window.location.href = 'index.html';
+                        });
+                    </script>
                 </div>
             </li>
                 </ul>
@@ -67,37 +83,37 @@
             </header>
         </article>
         <section class="related">
-            <h3 class="related__title"></h3>
+            <h3 class="related__title">articole cu animale</h3>
             <div>
             <div class="related__wrapper clearfix">
                 <article class="related__item item">
                     <a href="#">
-                        <h4 class="item__title"></h4>
+                        <h4 class="item__title">Luna </h4>
                     </a>
                 </article>
                 <article class="related__item item">
                     <a href="#">
-                        <h4 class="item__title"> </h4>
+                        <h4 class="item__title">Simba </h4>
                     </a>
                 </article>
                 <article class="related__item item">
                     <a href="#">
-                        <h4 class="item__title"></h4>
+                        <h4 class="item__title">Shadow</h4>
                     </a>
                 </article>
                 <article class="related__item item">
                     <a href="#">
-                        <h4 class="item__title"></h4>
+                        <h4 class="item__title">Spike </h4>
                     </a>
                 </article>
                 <article class="related__item item">
                     <a href="#">
-                        <h4 class="item__title"></h4>
+                        <h4 class="item__title">Cleo</h4>
                     </a>
                 </article>
                 <article class="related__item item">
                     <a href="#">
-                        <h4 class="item__title"></h4>
+                        <h4 class="item__title">Manu</h4>
                     </a>
                 </article>
             </div>
@@ -148,10 +164,10 @@
                 </li>
                 <li class="menu__item">
                     <a class="menu__link" href="contact-us.html">
-                       contact us 
+                        <button id="openPageButton">Contact Us</button>
+                       
                     </a>
                 </li>
-                
             </ul>
         </nav><!-- /.footer__nav -->
         <div class="footer__content">

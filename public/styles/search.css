@@ -1,5 +1,6 @@
 
 body {
+  background-color: #624125; 
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -45,4 +46,103 @@ main {
 h2, p {
     margin: 0;
     color: #624125; 
+}
+/* //////////////////////////////////////////////////////// */
+.header__nav {
+    background-color: #2c0404; /* Background color */
+  }
+  .nav__wrapper {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;  /* Align items horizontally with space between  */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Add padding */
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+  @media (max-width: 768px) {
+    .nav__wrapper {
+        padding: 0;
+        justify-content: center;
+    }
+  }
+  .nav__link,
+.nav__link1 {
+  text-decoration: none; /* Remove underline from links */
+  color: #ffffff; /* Set link color */
+  font-family:'Monaco', sans-serif;
+  font-size: 20px;
+  font-weight: bold; /* Bold text */
+}
+  .nav__link1:hover {
+    color: rgb(210, 49, 25); /* Change text color on hover */
+  }
+
+.nav__itemSpecialFont {
+    display: flex;
+    align-items: center;
+}
+
+.nav__itemSpecialFont span {
+    font-size: 1.2em; /* Font size for "Petfinder" text */
+    color: #ffffff; /* Dark gray color for text */
+    margin-right: 10px;
+}
+
+.paw {
+    display: inline-block;
+    width: 40px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle;
+}
+
+.nav__link {
+    color: #ffffff; /* Dark gray color for links */
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.2em;
+}
+.signup-button {
+  background-color: #2c0404;
+   border: none;
+   color: white;
+   padding: 7px 7px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 20px;
+   cursor: pointer;
+   border-radius: 4px;
+  font-family:'Monaco', sans-serif;
+  font-weight: bold; /* Bold text */
+  transition: color 0.3s; /* Smooth color transition */
+
+}
+.login-button{
+    background-color: #2c0404;
+    border: none;
+    color: white;
+    padding: 7px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family:'Monaco', sans-serif;
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s; /* Smooth color transition */
+  
+ 
+}
+
+.login-button:hover,
+.signup-button:hover { 
+  color: rgb(210, 49, 25); /* Change text color on hover */
+}
+.login-signup-container {
+  float: right; /* Move the container to the right */
+  
 }
